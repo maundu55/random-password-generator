@@ -9,12 +9,12 @@ body{
     color: #fff;
 }
 .container{
-    margin: 12%;
+    margin: 10%;
     width: 90%;
     max-width: 700px;
 }
 .display{
-    width: 100%;
+    width: 90%;
     margin-top: 50px;
     margin-bottom: 30px;
     background: #fff;
@@ -27,7 +27,7 @@ body{
 }
 .container h1{
     font-weight: 500;
-    font-size: 45px;
+    font-size: 40px;
 }
 .container h1 span{
     color: #019f55;
@@ -55,9 +55,9 @@ body{
     cursor: pointer;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 430px){
     .display{
-        width:90%;
+        width: 90%;
     }
     .display input{
         font-size:16px;
@@ -65,4 +65,5 @@ body{
     .container button{
         font-size: 18px;
     }
+   
 }
