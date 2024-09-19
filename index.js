@@ -1,22 +1,27 @@
 const passwordEl = document.getElementById('password');
 const buttonEl = document.getElementById('btn');
 
- let password = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789,.;:?-_*&%$#@!^/'
-let passLength = 12;
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789,.;:?-_*&%$#@!^/'
+let passLength = 8;
+let password = '';
 
 buttonEl.addEventListener('click', generatePass)
 
 function generatePass(){
-    let randomPassword = '';
-  passwordEl.value = randomPassword;
 
-  while(password.length == passLength){
-    randomPassword = Math.floor(Math.random() *password)*passLength;
+  for(i = 0; i <= passLength; i++){
+    let randomNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randomNumber, randomNumber + 1);
   }
-  console.log(randomPassword);
-  passwordEl.value = '';
-  console.log('again')
-  
-  
+  passwordEl.value = password;
+  console.log(password);
+ 
 }
-generatePass();
+const copyBtn = document.getElementById("copy");
+copyBtn.addEventListener("click", () => {
+  passwordEl.select();
+  document.execCommand("copy");
+  alert("Password Copied");
+//   passwordEl.value = '';
+});
+
